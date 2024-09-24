@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+
+import Dashboard from './pages/Dashboard-elements/Dashboard';
+
+import Properties from './pages/Properties-elements/Properties';
+import PropertiesDetailes from './pages/Properties-elements/Properties-Detailes'; // Importa la página de detalles
+import CreateProperties from './pages/Properties-elements/Create-Properties'; // Importa la página de detalles
+
+import Inmobiliarias from './pages/Inmobiliairas-elements/Inmobiliarias';
+import Propietarios from './pages/Owners-elements/Owners';
+import Informes from './pages/Informes';
+
+import Sidebar from './components/Menu/Sidebar';
+
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className='container-fluid'>
+        <div className='row'>
+        <div className='col-1'>
+          <Sidebar />
+        </div>
+        
+        <div className='col-11'>
+          <Routes>
+            <Route path="/Dashboard" element={<Dashboard />} />
+            
+            {/* Properties Pages */}
+            <Route path="/Properties" element={<Properties />} />
+            <Route path="/Properties-Details/:id" element={<PropertiesDetailes />} /> {/* Ruta con parámetro dinámico */}
+            <Route path="/Create-Properties" element={<CreateProperties />} /> {/* Ruta con parámetro dinámico */}
+
+            <Route path="/Inmobiliarias" element={<Inmobiliarias />} />
+            <Route path="/Propietarios" element={<Propietarios />} />
+            <Route path="/Informes" element={<Informes />} />
+          </Routes>
+        </div>
+
+        </div>
+        
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

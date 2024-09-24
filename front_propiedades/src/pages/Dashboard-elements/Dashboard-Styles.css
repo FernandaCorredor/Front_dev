@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+.pages-margin{
+    justify-content: flex-start;
+    margin: 0 auto; /* Centra horizontalmente */
+    padding-top: 0; /* Asegúrate de que no haya margen superior */
+    width: 80%; /* Ajusta el ancho según sea necesario */
+}
+.dashboard-title{
+    color: #0B1041;
+    margin: 0;
+    font-family: 'Source Serif 4';
+    font-weight: 700;
+    font-size: 3rem;
+}
+.pages-subtitle{
+    color: #0B1041;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.cards-container{
+    margin: 2% 0%;
+    background-color: #E9EBFB;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+    
+    width: 102.75rem;
+    div{
+        margin: 2%;
+        background-color: #FFFFFF;
+        border-radius: 5%;
+        color: #0B1041;
+        max-width: 17.0rem;
+        min-width: 15.5rem;
+        height: 9.8rem;
+
+        text-align: center;
+        h3{
+            margin: 0;
+            font-family: 'Source Serif 4';
+            font-weight: 600;
+            font-size: 3rem;
+        }
+        p{
+            margin: 0;
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 1.25rem;
+            width: 100%;
+            
+        }
+    }
+}
+
+/*.card{
+    margin: 2%;
+    padding: 2% 5%;
+    background-color: #FFFFFF;
+    border-radius: 5%;
+    color: #0B1041;
+}*/
+

@@ -1,0 +1,77 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12%;
+    height: 100%;
+    background-color: #2D3486;
+    padding-top:2%;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button-menu {
+    div{
+      margin-bottom: 10%;
+      padding-left: 10%;
+      align-items: center;
+
+      a{
+        font-size: 1.5rem;
+        padding: 2%;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+
+        svg{
+          margin-right: 10px;
+        }
+        &:hover{
+          color: #0B1041;
+        }
+        &:active{
+          color: #E9EBFB;
+        }
+      }
+      &:hover{
+        background-color: #E9EBFB;
+      }
+      &:active{
+        background-color: #525EE0;
+      }
+    }
+    
+  }
+
+
+  .footer-button {
+    margin-top: auto; /* Empuja el botón hacia el fondo */
+    margin-bottom: 20%;
+  }
+  
+  /* Teléfonos pequeños (menos de 768px) */
+@media (max-width: 767px) {
+  /* Estilos para pantallas pequeñas */
+
+}
+/* Tablets en vertical y teléfonos grandes */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Estilos para pantallas medianas */
+
+}
+
+/* Tablets en horizontal y laptops pequeños */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Estilos para pantallas medianas a grandes */
+
+}
+
+/* Laptops grandes y pantallas de escritorio */
+@media (min-width: 1280px) {
+  /* Estilos para pantallas grandes */
+
+
+}
+
+  
