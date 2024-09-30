@@ -19,14 +19,14 @@ const PropertiesTable = () => {
 
   // Función para navegar a la página de detalles
   const goToDetails = (propertyId) => {
-    navigate(`/Properties-Details/${propertyId}`); // Navega a la ruta con el ID de la propiedad
+    navigate(`../Properties-Details/${propertyId}`); // Navega a la ruta con el ID de la propiedad
   };
 
   return (
     <div id='Properties-Table'>
       <div>
       <table>
-        <thead>
+        <thead  className='subheader-font'>
           <tr>
             <th>Nombre</th>
             <th>Tipo</th>
@@ -37,7 +37,7 @@ const PropertiesTable = () => {
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='paragraph-font'>
           {properties.map((property) => (
             <tr key={property.id} onClick={() => goToDetails(property.id)}>
               <td>{property.nombre}</td>

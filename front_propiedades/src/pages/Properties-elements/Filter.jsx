@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './Properties-Styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
@@ -13,9 +12,10 @@ const Filter = () => {
     return (
       <div id='Filter' className='filter-container'>
         <div className='container-fluid'>
-          <div className='row'>
-            <h3 className='col-1'>Filtros</h3>
-            <div className='col-2 filter-dropdown'>
+          <div className='row align-items-center justify-content-between'>
+            <h3 className='col subtitle-page subtitle-font'>Filtros</h3>
+            
+            <div className='col filter-dropdown button-font'>
               {/*Tipo propiedad */}
               <select value={selectedOption} onChange={handleChange}>
                 <option value="">Tipo de propiedad</option>
@@ -25,8 +25,8 @@ const Filter = () => {
               </select>
             </div>
 
-            <div className='col-2 filter-dropdown'>
-              {/*Tipo propiedad */}
+            <div className='col filter-dropdown button-font'>
+              {/*Ciudad */}
               <select value={selectedOption} onChange={handleChange}>
                 <option value="">Ciudad</option>
                 <option value="opcion1">Opción 1</option>
@@ -35,8 +35,8 @@ const Filter = () => {
               </select>
             </div>
 
-            <div className='col-2 filter-dropdown'>
-              {/*Tipo propiedad */}
+            <div className='col filter-dropdown button-font'>
+              {/*Estado */}
               <select value={selectedOption} onChange={handleChange}>
                 <option value="">Estado</option>
                 <option value="opcion1">Opción 1</option>
@@ -44,8 +44,9 @@ const Filter = () => {
                 <option value="opcion3">Opción 3</option>
               </select>
             </div>
-            <div className='col-2 filter-dropdown'>
-              {/*Tipo propiedad */}
+
+            <div className='col filter-dropdown button-font'>
+              {/*Notificaciones */}
               <select value={selectedOption} onChange={handleChange}>
                 <option value="">Notificaciones</option>
                 <option value="opcion1">Opción 1</option>
@@ -53,16 +54,10 @@ const Filter = () => {
                 <option value="opcion3">Opción 3</option>
               </select>
             </div>
-
-
           </div>
-
         </div>
-          
-
-          
       </div>
     );
-  }
-  
-  export default Filter;
+}
+
+export default Filter;

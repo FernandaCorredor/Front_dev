@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
 
 //import './Properties-elements/Properties-Styles.css'; // Mantén tus estilos
 import './Properties-Styles.css'
+import '../General-Styles.css'
 import Filter from './Filter';
 import PropertiesTable from './PropertiesTable';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -27,27 +28,27 @@ function Properties() {
       {/* Bootstrap Container */}
       <div className="container-fluid">
         <div className='row'>
-        <div id='Barra-Propietarios' className='barra-superior'>
-          <div className="col-1"></div>
-          <div className="col-2">
-            <h1>Propiedades</h1>
-          </div>
-          <div className='col-2'></div> 
-          
-          <div className='col-6 busqueda-creacion'>
-            <div className="input-group barra-busqueda">
-                <input type='text' className="form-control" placeholder='Buscar' />
-                <span>
-                  <SearchOutlinedIcon />
-                </span>
+          <div id='Barra-Propiedades' className='barra-superior'>
+            <div className="col-1"></div>
+            <div className="col-2">
+              <h1 className='title-font'>Propiedades</h1>
             </div>
+            <div className='col-2'></div> 
             
-            <div>
-              <button onClick={goToCreate} className='create-button'>Crear Registro</button>
+            <div className='col-6 busqueda-creacion'>
+              <div className="input-group barra-busqueda">
+                  <input type='text' className="form-control paragraph-font" placeholder='Buscar' />
+                  <span>
+                    <SearchOutlinedIcon />
+                  </span>
+              </div>
+              
+              <div>
+                <button onClick={goToCreate} className='create-button button-font'>Crear Registro</button>
+              </div>
             </div>
+            <div className='col-1'></div>
           </div>
-          <div className='col-1'></div>
-        </div>
         </div>
         
 

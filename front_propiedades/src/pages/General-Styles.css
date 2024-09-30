@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+:root {
+    --principal: #525EE0;
+    --accent: #E0D452;
+    --neutral1:#E9EBFB;
+    --neutral2:#A8AEF0;
+    --neutral3:#2D3486;
+    --neutral4:#0B1041;
+    --white:#fbfbfb;
+    --semantico_rojo:#E05252;
+}
+
+.pages-margin{
+    justify-content: flex-start;
+    margin: 0 auto; /* Centra horizontalmente */
+    padding-top: 0; /* Asegúrate de que no haya margen superior */
+    width: 100%; /* Ajusta el ancho según sea necesario */
+}
+/*FONTS*/
+.title-font{
+    display: flex;
+    color: var(--neutral4);
+    padding-right:50%;
+    font-family: 'Source Serif 4';
+    font-weight: 700;
+}
+.subtitle-font{
+    color: var(--neutral4);
+    font-family: 'Montserrat';
+    font-weight: 600;
+    padding-right: 0;
+}
+.button-font{
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+.paragraph-font{
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+.dashnumber-font{
+    display: flex;
+    color: var(--neutral4);
+    font-family: 'Source Serif 4';
+    font-weight: 600;
+}
+.subheader-font{
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+/*HEADER*/
+.barra-superior{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-bottom: 3%;
+}
+.busqueda-creacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre la barra de búsqueda y el botón */
+    margin:auto;
+    padding-right: 2.2%;
+}
+.barra-busqueda {
+    align-content: center;
+    background-color: var(--neutral1);
+    padding: 1rem;
+    width: 100%;
+    svg{
+        color: var(--neutral2);
+    }
+    input{
+        color: var(--neutral4);
+        border: none;
+        background: none;
+        outline: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 1.25rem;
+        width: 37.5rem; /* Ajusta el ancho de la barra de búsqueda */
+    }
+}
+.create-button{
+    color: var(--neutral4);
+    border: none;
+    outline: none;
+    background-color:var(--accent);
+    border-radius: 1.5rem;  
+    padding: 1% 10%;
+    
+    white-space: nowrap; /* Esta línea evita que el texto se divida */
+    &:hover{
+        background-color: var(--neutral1);
+    }
+    &:active{
+        background-color: var(--principal);
+        color: var(--neutral1);
+    }
+}
+
+/*TABLE*/
+table{
+    background-color: var(--neutral4);
+    text-align: center;
+    margin: 0 auto; /* Centra la tabla */
+    width: 100%;
+    padding: 0; /* Asegúrate de que no haya rellenos */
+    
+    thead{
+        background-color: var(--neutral3);
+        color: var(--neutral1);
+        padding: 0% 10% 0% 10%;
+        tr{
+            padding: 0% 10% 0% 10%;
+            th{
+                width: 20rem;
+                padding: 1%;
+                margin: 10%;
+                border: none;
+                outline: none;
+            }
+            
+        }
+          
+    }
+    tbody{
+        background-color: var(--white);
+        color: #000000;
+        tr{
+            &:hover{
+                background-color: var(--neutral1);
+            }
+            &:active{
+                background-color: var(--neutral2);
+            }
+        }
+    }
+}
+
+/*DISCARD AND SAVE BUTTONS*/
+.save-discard-buttons{
+    button{
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        padding: 1% 5%;
+        margin: 5% 1%;
+    }
+    .discard-button{
+        background-color: var(--neutral1);
+        color: var(--neutral4);
+        &:hover{
+            background-color: var(--neutral2);
+        }
+        &:active{
+            background-color: var(--neutral3);
+            color: var(--neutral1);
+        }
+
+    }
+    .save-button{
+        background-color: var(--principal);
+        color: var(--neutral1);
+        &:hover{
+            background-color: var(--neutral3);
+        }
+        &:active{
+            background-color: var(--neutral4);
+            color: var(--neutral1);
+        }
+    }
+}
+
+/*BUTTONS*/
+.dropdown{
+    width: 100%;
+    border-radius: 7px;
+}
+.button-opc1{
+    color: var(--neutral4);
+    border: none;
+    outline: none;
+    background-color:var(--accent);
+    border-radius: 1.5rem;  
+    padding: 0.5% 0.5%;
+    
+    white-space: nowrap; /* Esta línea evita que el texto se divida */
+    &:hover{
+        background-color: var(--neutral1);
+    }
+    &:active{
+        background-color: var(--principal);
+        color: var(--neutral1);
+    }
+}
+
+/*INPUTS*/
+input{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    background-color: var(--white);
+    color: var(--neutral4);
+    border: none;
+    width: 100%;
+    border-radius: 7px;
+    padding-left: 5%;
+    
+}
+input::placeholder {
+    color: var(--neutral2);
+  }
+
+/*MEDIA QUERIES*/
+  /* Tablets en horizontal y laptops pequeños */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    /* Estilos para pantallas medianas a grandes */
+    .title-font{
+        font-size: 1rem;
+    }
+    .subtitle-font{
+        font-size: 1.25rem;
+    }
+    .button-font{
+        font-size: 1rem;
+    }
+    .paragraph-font{
+        font-size: 0.8rem;
+    }
+    .subheader-font{
+        font-size: 0.7rem;
+    }
+  }
+  
+  /* Laptops grandes y pantallas de escritorio */
+  @media (min-width: 1280px) {
+    /* Estilos para pantallas grandes */
+    .title-font{
+        font-size: 2rem;
+    }
+    .subtitle-font{
+        font-size: 1.1rem;
+    }
+    .button-font{
+        font-size:1rem;
+    }
+    .paragraph-font{
+        font-size: 0.8rem;
+    }
+    .subheader-font{
+        font-size: 1rem;
+    }
+    .dashnumber-font{
+        font-size: 2rem;
+    }
+    .barra-busqueda {
+        height: 2.05rem;
+    }
+    .create-button{
+        height: 2rem;
+    }
+  }
+  
+  /* Laptops grandes y pantallas de escritorio */
+  @media (min-width: 1920px) {
+    /* Estilos para pantallas grandes */
+    .title-font{
+        font-size: 3rem;
+    }
+    .subtitle-font{
+        font-size: 1.75rem;
+    }
+    .button-font{
+        font-size: 1.5rem;
+    }
+    .paragraph-font{
+        font-size: 1.25rem;
+    }
+    .dashnumber-font{
+        font-size: 3rem;
+    }
+    .subheader-font{
+        font-size: 1.5rem;
+    }
+    .barra-busqueda {
+        height: 2.5rem;
+    }
+    .create-button{
+        height: 2.5rem;
+    }
+
+  }

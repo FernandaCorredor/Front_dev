@@ -5,10 +5,11 @@ import Dashboard from './pages/Dashboard-elements/Dashboard';
 
 import Properties from './pages/Properties-elements/Properties';
 import PropertiesDetailes from './pages/Properties-elements/Properties-Detailes'; // Importa la página de detalles
-import CreateProperties from './pages/Properties-elements/Create-Properties'; // Importa la página de detalles
+import CreateProperties from '../src/pages/Properties-elements/CreateProperties/Create-Properties'; // Importa la página de detalles
 
-import Inmobiliarias from './pages/Inmobiliairas-elements/Inmobiliarias';
-import Propietarios from './pages/Owners-elements/Owners';
+
+import Inmobiliarias from './pages/Inmobiliarias-elements/Inmobiliarias';
+import Owners from './pages/Owners-elements/Owners';
 import Informes from './pages/Informes';
 
 import Sidebar from './components/Menu/Sidebar';
@@ -34,7 +35,7 @@ function App() {
             <Route path="/Create-Properties" element={<CreateProperties />} /> {/* Ruta con parámetro dinámico */}
 
             <Route path="/Inmobiliarias" element={<Inmobiliarias />} />
-            <Route path="/Propietarios" element={<Propietarios />} />
+            <Route path="/Owners" element={<Owners />} />
             <Route path="/Informes" element={<Informes />} />
           </Routes>
         </div>

@@ -2,12 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useNavigate } from 'react-router-dom'; // Para la navegación
-import './Owners-Styles.css';
+import './Inmobiliarias-Styles.css';
 import '../General-Styles.css'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
-const OwnersTable = () => {
+const InmobiliariasTable = () => {
 
   // Datos simulados de propiedades (puedes reemplazarlos luego con datos de la base de datos)
   const properties = [
@@ -23,10 +23,10 @@ const OwnersTable = () => {
       <table>
         <thead  className='subheader-font'>
           <tr>
-            <th>Propietario</th>
-            <th>Persona</th>
-            <th>Tipo identificación</th>
-            <th>Número identificación</th>
+            <th>Inmobiliaria</th>
+            <th>NIT</th>
+            <th>Contacto telefónico</th>
+            <th>Correo electrónico</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -67,4 +67,4 @@ const OwnersTable = () => {
   );
 }
 
-export default OwnersTable;
+export default InmobiliariasTable;

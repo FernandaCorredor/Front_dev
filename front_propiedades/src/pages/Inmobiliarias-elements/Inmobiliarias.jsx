@@ -2,11 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
 
 import '../General-Styles.css'
-import OwnersTable from './OwnersTable';
+import InmobiliariasTable from './InmobiliariasTable';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useNavigate } from 'react-router-dom';
 
-function Owners() {
+function Inmobiliarias() {
 
   return (
     <div id='Properties' className='pages-margin'>
@@ -16,7 +16,7 @@ function Owners() {
         <div id='Barra-Propietarios' className='barra-superior'>
           <div className="col-1"></div>
           <div className="col-2">
-            <h1 className='title-font'>Propietarios </h1>
+            <h1 className='title-font'>Inmobiliarias </h1>
           </div>
           <div className='col-2'></div> 
           
@@ -41,7 +41,7 @@ function Owners() {
         <div id='owners-table' className="row">
           <div className='col-1'></div>
           <div className="col-10">
-            <OwnersTable />
+            <InmobiliariasTable />
           </div>
           <div className='col-1'></div>
         </div>
@@ -50,4 +50,4 @@ function Owners() {
   );
 }
 
-export default Owners;
+export default Inmobiliarias;

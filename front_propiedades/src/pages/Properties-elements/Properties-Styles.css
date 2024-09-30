@@ -1,140 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('../General-Styles.css');
 
-.pages-margin{
-    justify-content: flex-start;
-    margin: 0 auto; /* Centra horizontalmente */
-    padding-top: 0; /* Asegúrate de que no haya margen superior */
-    width: 100%; /* Ajusta el ancho según sea necesario */
-}
-h1{
-    color: #0B1041;
-    padding-right:50%;
-    font-family: 'Source Serif 4';
-    font-weight: 700;
-}
-h3{
-    color: #0B1041;
-    font-family: 'Montserrat';
-    font-weight: 600;
-    
-}
-.property-name{
-    color: #0B1041;
-    margin: 0;
-    font-family: 'Source Serif 4';
-    font-weight: 600;
-    font-size: 3rem;
-}
-
-
-
-.busqueda-creacion {
+/*FILTER*/
+.filter-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem; /* Espacio entre la barra de búsqueda y el botón */
-    margin:auto;
-}
-.barra-superior{
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-}
-.barra-busqueda {
-    font-family: 'Montserrat';
-    font-weight: 400;
-
-    align-items: center;
-    align-content: center;
-    background-color: #E9EBFB;
-    border-radius: 1rem;
-    padding: 1rem;
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 1.25rem;
-    height: 2.7rem;
-    svg{
-        color: #A8AEF0;
-    }
-    input{
-        color: #0B1041;
-        border: none;
-        background: none;
-        outline: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        font-size: 1.25rem;
-        width: 37.5rem; /* Ajusta el ancho de la barra de búsqueda */
-    }
-}
-.create-button{
-    font-family: 'Montserrat';
-    font-weight: 500;
-
-    border: none;
-    outline: none;
-    color:#0B1041;
-    background-color: #E0D452;
-    border-radius: 1.5rem;  
-    padding: 2% 10%;
-    align-items: center;
-    white-space: nowrap; /* Esta línea evita que el texto se divida */
-    &:hover{
-        background-color: #E9EBFB;
-    }
-    &:active{
-        background-color: #525EE0;
-        color: #E9EBFB;
-    }
-}
-
-
-
-.filter-container{
-    display: flex;
-    background-color: #E9EBFB;
+    flex-direction: column;
+    justify-content: center; /* Centrar contenido */
+    align-items: center; /* Alinear el contenido verticalmente */
+    background-color: var(--neutral1);
     border-radius: 15px;
     padding: 1rem;
-    margin: auto;
-    margin-bottom: 2%;
-    margin-top: 1%;
-    align-items: center;
+    margin-bottom: 3%;
+
 }
-.filter-dropdown{
-    padding: 0rem 5rem;
+.filter-dropdown {
+    padding: 0 1.5rem; /* Espaciado entre selects */
+    text-align: center;
 }
-select{
+select {
     border: none;
     border-radius: 0.8rem;
-    background-color: #FFFFFF;
-    color: #A8AEF0;
+    background-color: var(--white);
+    color: var(--neutral2);
     padding: 0.2rem 0.5rem;
-    margin: 2%;
-    align-items: center;
-    option{
-        background-color: #E9EBFB;
-        color: #0B1041;
-        &:hover{
-            background-color: #A8AEF0;
-        }
-        &:active{
-            background-color: #2D3486;
-            color: #E9EBFB;
-        }
-    }
+}
+select option {
+    background-color: var(--neutral1);
+    color: var(--neutral4);
 }
 
-
-
+/*TABLE*/
 table{
-    font-family: 'Montserrat';
-    font-weight: 500;
-
     border-radius: 1rem 1rem 0 0; /* Solo redondea las esquinas superiores */
-    background-color: #0B1041;
+    background-color: var(--neutral4);
     border-top: none;
-    border-left:#E0D452;
+    border-left:var(--accent);
     text-align: center;
     margin: 0 auto; /* Centra la tabla */
     width: 100%;
@@ -142,8 +43,8 @@ table{
     
     thead{
         border-radius: 1rem 1rem 0 0;
-        background-color: #2D3486;
-        color: #E9EBFB;
+        background-color: var(--neutral3);
+        color: var(--neutral1);
         padding: 0% 10% 0% 10%;
         tr{
             padding: 0% 10% 0% 10%;
@@ -159,16 +60,14 @@ table{
           
     }
     tbody{
-        font-family: 'Montserrat';
-        font-weight: 400;
-        background-color: #ffffff;
+        background-color: var(--white);
         color: #000000;
         tr{
             &:hover{
-                background-color: #E9EBFB;
+                background-color: var(--neutral1);
             }
             &:active{
-                background-color: #A8AEF0;
+                background-color: var(--neutral2);
             }
         }
     }
@@ -178,30 +77,30 @@ table{
     gap: 1rem;
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center; /* Centra el contenido verticalmente */
-    background-color: #ffffff;
+    background-color: var(--white);
     margin: 5%;
     border: none;
 }
 .edit-button{
-    color: #0B1041;
+    color: var(--principal);
     &:hover{
-        background-color: #525EE0;
-        color: #E9EBFB;
+        background-color: var(--principal);
+        color: var(--neutral1);
     }
     &:active{
-        background-color: #2D3486;
-        color: #E9EBFB;
+        background-color: var(--neutral3);
+        color: var(--neutral1);
     }
 }
 .delete-button{
-    color: #E05252;
+    color: var(--semantico_rojo);
     &:hover{
-        background-color: #E05252;
-        color: #E9EBFB;
+        background-color: var(--semantico_rojo);
+        color: var(--neutral1);
     }
     &:active{
-        background-color: #C13838;
-        color: #E9EBFB;
+        background-color: var(--semantico_rojo);
+        color: var(--neutral1);
     }
 }
 .table-pages{
@@ -209,156 +108,52 @@ table{
     align-content: center;
 }
 
-/* Teléfonos pequeños (menos de 768px) */
-@media (max-width: 767px) {
-    /* Estilos para pantallas pequeñas */
-    h1{
-        font-size: 2rem;
-    }
-    h3{
-        font-size: 1rem;
-    }
-    .create-button{
-        font-size: 0.5rem;
-    }
-    table{
-        thead{
-            font-size: 0.5rem;
-            
-        }
-        
-        tbody{
-            font-size: 0.4rem;
-        }
-    }
-    .table-buttons{
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-  }
-  /* Tablets en vertical y teléfonos grandes */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    /* Estilos para pantallas medianas */
-    h1{
-        font-size: 2.5rem;
-    }
-    h3{
-        font-size: 1rem;
-    }
-    .barra-busqueda{
-        width: 22rem; 
-    }
-    .create-button{
-        font-size: 0.8rem;
-    }
-    table{
-        thead{
-            font-size: 0.7rem;
-            
-        }
-        
-        tbody{
-            font-size: 0.6rem;
-        }
-    }
-    .table-buttons{
-        width: 2rem;
-        height: 2rem;
-    }
-  }
-  
+/*MEDIA QUERIES*/
   /* Tablets en horizontal y laptops pequeños */
   @media (min-width: 1024px) and (max-width: 1279px) {
     /* Estilos para pantallas medianas a grandes */
-    h1{
-        font-size: 3rem;
-    }
-    h3{
-        font-size: 1.75rem;
-    }
-    .barra-busqueda{
-        width: 25rem; 
-    }
-    .create-button{
-        font-size: 1rem;
-    }
-    table{
-        thead{
-            font-size: 1.25rem;
-            
-        }
-        
-        tbody{
-            font-size: 1rem;
-        }
+    select{
+        width: 5rem;
     }
     .table-buttons{
         width: 2.5rem;
         height: 2.5rem;
+        svg{
+            width: 20px;
+            height: 20px;
+        }
     }
   }
   
   /* Laptops grandes y pantallas de escritorio */
   @media (min-width: 1280px) {
     /* Estilos para pantallas grandes */
-    h1{
-        font-size: 2rem;
-    }
-    h3{
-        font-size: 1.25rem;
-    }
-    .barra-busqueda{
-        width: 26rem; 
-    }
-    .create-button{
-        font-size: 1.25rem;
-    }
-
-    table{
-        thead{
-            font-size: 1rem;
-            
-        }
-        
-        tbody{
-            font-size: 0.8rem;
-        }
+    select{
+        width: 10rem;
     }
     .table-buttons{
         width: 2.5rem;
         height: 2.5rem;
+        svg{
+            width: 30px;
+            height: 30px;
+        }
     }
   }
   
   /* Laptops grandes y pantallas de escritorio */
   @media (min-width: 1920px) {
     /* Estilos para pantallas grandes */
-    h1{
-        font-size: 3rem;
-    }
-    h3{
-        font-size: 1.75rem;
-    }
-    .barra-busqueda{
-        width: 42rem; 
-    }
-    .create-button{
-        font-size: 1.5rem;
-    }
-
-    table{
-        thead{
-            font-size: 1.5rem;
-            
-        }
-        
-        tbody{
-            font-size: 1.25rem;
-        }
+    select{
+        width: 15rem;
     }
     .table-buttons{
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 3rem;
+        height: 3rem;
+        svg{
+            width: 40px;
+            height: 40px;
+        }
     }
   }
   

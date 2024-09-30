@@ -1,0 +1,88 @@
+@import url('../General-Styles.css');
+
+/*TABLE*/
+.table-buttons{
+    display: inline-flex; /* Habilita el modelo de flexbox */
+    gap: 1rem;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    background-color: var(--white);
+    margin: 5%;
+    border: none;
+}
+.edit-button{
+    color: var(--principal);
+    &:hover{
+        background-color: var(--principal);
+        color: var(--neutral1);
+    }
+    &:active{
+        background-color: var(--neutral3);
+        color: var(--neutral1);
+    }
+}
+.delete-button{
+    color: var(--semantico_rojo);
+    &:hover{
+        background-color: var(--semantico_rojo);
+        color: var(--neutral1);
+    }
+    &:active{
+        background-color: var(--semantico_rojo);
+        color: var(--neutral1);
+    }
+}
+.table-pages{
+    text-align: center;
+    align-content: center;
+}
+
+/*MEDIA QUERIES*/
+  /* Tablets en horizontal y laptops pequeños */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    /* Estilos para pantallas medianas a grandes */
+    select{
+        width: 5rem;
+    }
+    .table-buttons{
+        width: 2.5rem;
+        height: 2.5rem;
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+  }
+  
+  /* Laptops grandes y pantallas de escritorio */
+  @media (min-width: 1280px) {
+    /* Estilos para pantallas grandes */
+    select{
+        width: 10rem;
+    }
+    .table-buttons{
+        width: 2.5rem;
+        height: 2.5rem;
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+    }
+  }
+  
+  /* Laptops grandes y pantallas de escritorio */
+  @media (min-width: 1920px) {
+    /* Estilos para pantallas grandes */
+    select{
+        width: 15rem;
+    }
+    .table-buttons{
+        width: 3rem;
+        height: 3rem;
+        svg{
+            width: 40px;
+            height: 40px;
+        }
+    }
+  }
+  

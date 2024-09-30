@@ -18,15 +18,15 @@ const Sidebar = () => {
 
   return (
     <div className='sidebar'>
-      <div className='button-menu' style={{marginTop: '70%'}}>
+      <div className='button-menu sidebar-button-font' style={{marginTop: '70%'}}>
           <div><Link to="/Dashboard"><DashboardOutlinedIcon /> Dashboard</Link></div>
           <div><Link to="/Properties"><HomeWorkOutlinedIcon /> Propiedades</Link></div>
           <div><Link to="/Inmobiliarias"><BusinessCenterOutlinedIcon /> Inmobiliarias</Link></div>
-          <div><Link to="/Propietarios"><PeopleAltOutlinedIcon /> Propietarios</Link></div>
+          <div><Link to="/Owners"><PeopleAltOutlinedIcon /> Propietarios</Link></div>
           <div><Link to="/Informes"><ArticleOutlinedIcon /> Informes</Link></div>
         </div>
         
-        <div className="footer-button button-menu">
+        <div className="footer-button button-menu sidebar-button-font">
         <div><Link to="/"><LogoutOutlinedIcon /> Cerrar Sesión</Link></div>
         </div>
 

@@ -1,0 +1,18 @@
+@import url('../../../pages/General-Styles.css');
+
+.container-GI{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar contenido */
+    align-items: center; /* Alinear el contenido verticalmente */
+    background-color: var(--neutral1);
+    border-radius: 15px;
+    padding: 2%;
+    width: 100%;
+    margin: 2% auto;
+
+}
+.row-elements{
+    margin-top: 0.5%;
+    padding-bottom: 1%;
+}
