@@ -8,11 +8,44 @@
     background-color: var(--neutral1);
     border-radius: 15px;
     padding: 2%;
+    padding-top: 1%;
+    padding-bottom: 3%;
     width: 100%;
     margin: 2% auto;
 
 }
 .row-elements{
     margin-top: 0.5%;
-    padding-bottom: 1%;
+    padding-bottom: 1.5%;
 }
+
+.forms-title{
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+/* Estilo para el fondo oscuro */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate que esté por encima de todo */
+  }
+  
+  /* Estilo para el Popup */
+  .popup-content {
+    background: var(--white);
+    padding: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    /*height: 73%;*/
+  }
+  

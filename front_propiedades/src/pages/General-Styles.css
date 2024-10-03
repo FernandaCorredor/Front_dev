@@ -14,7 +14,7 @@
 
 .pages-margin{
     justify-content: flex-start;
-    margin: 0 auto; /* Centra horizontalmente */
+    margin: 5% auto; /* Centra horizontalmente */
     padding-top: 0; /* Asegúrate de que no haya margen superior */
     width: 100%; /* Ajusta el ancho según sea necesario */
 }
@@ -50,6 +50,7 @@
     font-family: 'Montserrat';
     font-weight: 500;
 }
+
 
 /*HEADER*/
 .barra-superior{
@@ -199,7 +200,7 @@ table{
     }
 }
 
-/*INPUTS*/
+/*INPUTS AND TEXTAREAS*/
 input{
     font-family: 'Montserrat';
     font-weight: 400;
@@ -213,7 +214,23 @@ input{
 }
 input::placeholder {
     color: var(--neutral2);
-  }
+}
+
+textarea{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    background-color: var(--white);
+    color: var(--neutral4);
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    padding-left: 1%;
+    
+}
+textarea::placeholder {
+    color: var(--neutral2);
+}
 
 /*MEDIA QUERIES*/
   /* Tablets en horizontal y laptops pequeños */
@@ -252,7 +269,7 @@ input::placeholder {
         font-size: 0.8rem;
     }
     .subheader-font{
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .dashnumber-font{
         font-size: 2rem;

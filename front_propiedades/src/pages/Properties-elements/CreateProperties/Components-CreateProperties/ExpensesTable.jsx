@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom'; // Para la navegación
 
@@ -9,28 +9,29 @@ import '../Components-CP-Styles.css'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import PopupExpensesCreate from './ExpensesCreate'; // Importa el componente Popup
 
 const ExpensesTable = () => {
   const navigate = useNavigate(); // Inicializa useNavigate
+  const [showPopup, setShowPopup] = useState(false); // Estado para mostrar u ocultar el popup
 
-  // Datos simulados de propiedades (puedes reemplazarlos luego con datos de la base de datos)
   const properties = [
     { id: 1, nombre: 'Propiedad 1', estado: 'ARRIENDO', acciones: '' , ciudad: 'Ciudad 1'},
-    { id: 2, nombre: 'Propiedad 2', estado: 'VENDIDO', acciones: '' , ciudad: 'Ciudad 2'},
-    { id: 3, nombre: 'Propiedad 3', estado: 'USO PROPIO', acciones: '' , ciudad: 'Ciudad 3'},
-    // Agrega más propiedades si es necesario
   ];
 
-  // Función para navegar a la página de detalles
   const goToDetails = (propertyId) => {
     navigate(`../Properties-Details/${propertyId}`); // Navega a la ruta con el ID de la propiedad
+  };
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup); // Muestra u oculta el popup
   };
 
   return (
     <div id='Expenses-Table' style={{ marginTop: '2%', marginBottom: '5%'}}>
       <div className='row' style={{ marginBottom: '1%'}}>
         <div className='subtitle-font col-9'>Gastos mensuales</div>
-        <button className='button-opc1 button-font col-3'>
+        <button className='button-opc1 button-font col-3' onClick={togglePopup}>
           <AddOutlinedIcon/> 
           Registrar gasto mensual
         </button>
@@ -63,20 +64,17 @@ const ExpensesTable = () => {
       </div>
       
 
-      {/* Paginación */}
+
+
+
       <div className='row'>
         <div id='Table-Page-Count' className='col-12 table-pages'>
-          <span>Anterior</span>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>...</span>
-          <span>10</span>
-          <span>Siguiente</span>
+         
         </div>
-
       </div>
-      
+
+      {/* Popup Component */}
+      {showPopup && <PopupExpensesCreate show={showPopup} handleClose={togglePopup} />}
     </div>
   );
 }

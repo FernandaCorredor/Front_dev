@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
 
 import '../General-Styles.css'
 import OwnersTable from './OwnersTable';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useNavigate } from 'react-router-dom';
+import PopupCEOwner from './CreateEdit-Owner'; // Importa el componente Popup
 
 function Owners() {
+  const [mode, setMode] = useState("view"); // Estado para controlar el modo
+
+  const [showPopup, setShowPopup] = useState(false); // Estado para mostrar u ocultar el popup
+  const togglePopup = () => {
+    setShowPopup(!showPopup); // Muestra u oculta el popup
+  };
 
   return (
     <div id='Properties' className='pages-margin'>
@@ -29,7 +36,9 @@ function Owners() {
             </div>
             
             <div>
-              <button className='create-button button-font'>Crear Registro</button>
+              <button className='create-button button-font' onClick={togglePopup}>
+                Agregar Propietario
+              </button>
             </div>
           </div>
           <div className='col-1'></div>
@@ -46,6 +55,10 @@ function Owners() {
           <div className='col-1'></div>
         </div>
       </div>
+
+
+      {/* Popup Component */}
+      {showPopup && <PopupCEOwner show={showPopup} handleClose={togglePopup} mode="create"/>}
     </div>
   );
 }

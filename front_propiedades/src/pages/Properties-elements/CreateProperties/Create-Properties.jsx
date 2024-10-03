@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
 
-import '../../Properties-elements/Properties-Styles.css'
-import '../../../pages/General-Styles.css'
+import '../../Properties-elements/Properties-Styles.css';
+import '../../../pages/General-Styles.css';
+
+import EmptyPropertyForm from './Forms-CreateProperties/EmptyProperty';
+import SoldPropertyForm from './Forms-CreateProperties/SoldProperty';
+import OwnUsePropertyForm from './Forms-CreateProperties/OwnUseProperty';
+import InmRentPropertyForm from './Forms-CreateProperties/InmRentProperty';
+import DirectRentPropertyForm from './Forms-CreateProperties/DirectRentProperty';
 
 import TaxesTable from './Components-CreateProperties/TaxesTable';
 import ExpensesTable from './Components-CreateProperties/ExpensesTable';
@@ -44,16 +50,26 @@ function CreateProperties() {
         <div className='row'>
           <div className='col-1'></div>
           <div className='col-10'>
-            <GeneralInformationCP onStatusChange={handleStatusChange} />
+            {/* Aquí pasamos el modo "create" al componente GeneralInformationCP */}
+            <GeneralInformationCP onStatusChange={handleStatusChange} mode="create" />
           </div>
           <div className='col-1'></div>
         </div>
 
         {/* Aquí se renderizan los JSX en función del estado de la propiedad */}
-        {propertyStatus === "empty" && <div>Renderiza contenido para propiedad vacía</div>}
-        {propertyStatus === "rent-inm" && <div>Renderiza contenido para propiedad en renta inmobiliaria</div>}
-        {propertyStatus === "rent-direct" && <div>Renderiza contenido para propiedad rentada directamente</div>}
-
+        <div className='row'>
+          <div className='col-1'> </div>
+          <div className='col-10'>
+            {propertyStatus === "empty" && <div> <EmptyPropertyForm mode="create"/> </div>}
+            {propertyStatus === "own-use" && <div> <OwnUsePropertyForm/> </div>}
+            {propertyStatus === "sold" && <div> <SoldPropertyForm/> </div>}
+            {propertyStatus === "rent-inm" && <div> <InmRentPropertyForm/></div>}
+            {propertyStatus === "rent-direct" && <div> <DirectRentPropertyForm/> </div>}
+          </div>
+          
+          <div className='col-1'> </div>
+        </div>
+        
         {/* Renderiza la tabla de impuestos */}
         <div className='row'>
           <div className='col-1'></div>
@@ -71,8 +87,6 @@ function CreateProperties() {
           </div>
           <div className='col-1'></div>
         </div>
-
-        
 
         {/* Botones de guardar o descartar */}
         <div className='row'>
