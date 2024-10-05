@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useNavigate } from 'react-router-dom'; // Para la navegación
 import './Properties-Styles.css';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import DeleteRegister from '../../components/Popups-Feedback/Popup-DeleteRegister'
 
 const PropertiesTable = () => {
   const navigate = useNavigate(); // Inicializa useNavigate
+
+  // Estado para controlar la visibilidad del popup
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState(null);
 
   // Datos simulados de propiedades (puedes reemplazarlos luego con datos de la base de datos)
   const properties = [
@@ -20,6 +25,24 @@ const PropertiesTable = () => {
   // Función para navegar a la página de detalles
   const goToDetails = (propertyId) => {
     navigate(`../Properties-Details/${propertyId}`); // Navega a la ruta con el ID de la propiedad
+  };
+
+  // Función para mostrar el popup y seleccionar la propiedad a eliminar
+  const handleDeleteClick = (propertyId) => {
+    setSelectedProperty(propertyId); // Guardamos la propiedad seleccionada
+    setShowPopup(true); // Mostramos el popup
+  };
+
+  // Función para cerrar el popup
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    setSelectedProperty(null); // Limpiamos la selección de la propiedad
+  };
+
+  // Función para confirmar la eliminación
+  const handleConfirmDelete = () => {
+    console.log(`Eliminando la propiedad con ID: ${selectedProperty}`);
+    setShowPopup(false); // Cerramos el popup después de confirmar
   };
 
   return (
@@ -47,8 +70,17 @@ const PropertiesTable = () => {
               <td>{property.estado}</td>
               <td>{property.notificaciones}</td>
               <td>
-                <button className='table-buttons edit-button'><ModeEditOutlineOutlinedIcon/></button>
-                <button className='table-buttons delete-button'><DeleteOutlinedIcon/></button>
+                <button id='edit' className='table-buttons edit-button'><ModeEditOutlineOutlinedIcon/></button>
+                <button 
+                  id='delete' 
+                  className='table-buttons delete-button' 
+                  onClick={(e) => {
+                    e.stopPropagation(); // Evitar que el evento clic en el delete dispare el evento de la fila
+                    handleDeleteClick(property.id);
+                  }}
+                >
+                  <DeleteOutlinedIcon/>
+                </button>
               </td>
             </tr>
           ))}
@@ -57,7 +89,6 @@ const PropertiesTable = () => {
 
       </div>
       
-
       {/* Paginación */}
       <div className='row'>
         <div id='Table-Page-Count' className='col-12 table-pages'>
@@ -69,9 +100,16 @@ const PropertiesTable = () => {
           <span>10</span>
           <span>Siguiente</span>
         </div>
-
       </div>
-      
+
+      {/* Popup de eliminación */}
+      {showPopup && (
+        <DeleteRegister 
+          show={showPopup}
+          handleClose={handleClosePopup}
+          eliminarAccion={handleConfirmDelete}
+        />
+      )}
     </div>
   );
 }

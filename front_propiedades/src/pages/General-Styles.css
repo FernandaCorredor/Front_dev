@@ -10,6 +10,7 @@
     --neutral4:#0B1041;
     --white:#fbfbfb;
     --semantico_rojo:#E05252;
+    --semantico_rojo_oscuro:#C13838;
 }
 
 .pages-margin{
@@ -199,7 +200,39 @@ table{
         color: var(--neutral1);
     }
 }
-
+.button-opc2{
+    color: var(--neutral4);
+    border: none;
+    outline: none;
+    background-color:var(--neutral1);
+    border-radius: 1.5rem;  
+    padding: 0.5% 0.5%;
+    
+    white-space: nowrap; /* Esta línea evita que el texto se divida */
+    &:hover{
+        background-color: var(--neutral2);
+    }
+    &:active{
+        background-color: var(--neutral3);
+        color: var(--neutral1);
+    }
+}
+.button-warning{
+    color: var(--white);
+    border: none;
+    outline: none;
+    background-color:var(--semantico_rojo);
+    border-radius: 1.5rem;  
+    padding: 0.5% 0.5%;
+    
+    white-space: nowrap; /* Esta línea evita que el texto se divida */
+    &:hover{
+        background-color: var(--semantico_rojo_oscuro);
+    }
+    &:active{
+        background-color: var(--semantico_rojo_oscuro);
+    }
+}
 /*INPUTS AND TEXTAREAS*/
 input{
     font-family: 'Montserrat';
